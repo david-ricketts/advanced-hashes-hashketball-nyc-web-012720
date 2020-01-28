@@ -125,11 +125,9 @@ end
 def shoe_size(_player_name)
   game_hash.each do |_place, team|
     team.each do |attribute, data|
-      if attribute == :player
+      if attribute == :players
         data.each do |player|
-          if player[:player_name] == _player_name
-            return player[:shoe]
-          end
+          return player[:shoe] if player[:player_name] == _player_name
         end
       end
     end
